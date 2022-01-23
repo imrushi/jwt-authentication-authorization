@@ -4,6 +4,18 @@
 
 `$ docker run --name postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:9.6`
 
+### Create Database in Postgres
+
+`$ docker exec -it postgres`
+
+Run below commands inside container
+
+`# su postgres`
+
+`$ psql`
+
+`#postgres= CREATE DATABASE userdb;`
+
 ### RUN Go Server
 
 `$ go install`
