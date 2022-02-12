@@ -69,18 +69,36 @@ Response Body:
 {
   "role": "admin",
   "email": "test@gmail.com",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjQyOTQ0NDc0LCJyb2xlIjoiYWRtaW4ifQ.m92qOGMsluZu446JBKfZfiJw4x9XAVqIQxm5_lwc28w"
+  "token": "eyJhbGciOiJIUzI1NiIsImtpZCI6ImE1YTE5Njk0LTYzMjEtNDRmMy1iY2FlLTA1M2U4N2E4NjczZCIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsImV4cCI6MTY0NDY2NTI5NCwicm9sZSI6ImFkbWluIn0.15xiOg2s0ihj46hukOB9-Zod2Hf9DIqFScjHAXc3ARI"
 }
 ```
 
 GET `http://localhost:8090/isauth`
 
-Set Headers `Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjQyOTQ0NDc0LCJyb2xlIjoiYWRtaW4ifQ.m92qOGMsluZu446JBKfZfiJw4x9XAVqIQxm5_lwc28w`
+Set Headers `Token eyJhbGciOiJIUzI1NiIsImtpZCI6ImE1YTE5Njk0LTYzMjEtNDRmMy1iY2FlLTA1M2U4N2E4NjczZCIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsImV4cCI6MTY0NDY2NTI5NCwicm9sZSI6ImFkbWluIn0.15xiOg2s0ihj46hukOB9-Zod2Hf9DIqFScjHAXc3ARI`
 
 Response Body:
 
 ```
 {
   "msg": "Welcome, Admin."
+}
+```
+
+GET `http://localhost:8090/.well-known/jwks.json`
+
+Response Body:
+
+```
+{
+	"keys": [
+		{
+			"use": "sig",
+			"kty": "oct",
+			"kid": "a5a19694-6321-44f3-bcae-053e87a8673d",
+			"alg": "HS256",
+			"k": "dGhpc2lzbXlzZWNyZXRrZXk"
+		}
+	]
 }
 ```

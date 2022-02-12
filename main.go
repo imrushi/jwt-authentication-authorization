@@ -78,6 +78,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/signup", handler.SignUp).Methods(http.MethodPost)
 	r.HandleFunc("/signin", handler.SignIn).Methods(http.MethodPost)
+	r.HandleFunc("/.well-known/jwks.json", handler.JwkJson).Methods(http.MethodGet)
 	r.HandleFunc("/isauth", IsAuthorized(handler.IsAuth)).Methods(http.MethodGet)
 	loggedRouter := handlers.LoggingHandler(os.Stdout, r)
 	s := &http.Server{

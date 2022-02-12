@@ -54,6 +54,7 @@ func GenerateHashPassword(password string) (string, error) {
 func GenerateJWT(email, role string) (string, error) {
 	var mySigningKey = []byte("thisismysecretkey")
 	token := jwt.New(jwt.SigningMethodHS256)
+	token.Header["kid"] = "a5a19694-6321-44f3-bcae-053e87a8673d"
 	claims := token.Claims.(jwt.MapClaims)
 
 	claims["authorized"] = true
